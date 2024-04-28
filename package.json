@@ -4,6 +4,8 @@
   "description": "A boilerplate project for webpack-react config",
   "main": "index.js",
   "scripts": {
+    "start":"webpack serve --mode development",
+    "watch":"webpack --watch",
     "build:production": "webpack --mode production"
   },
   "keywords": [

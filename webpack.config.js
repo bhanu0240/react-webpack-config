@@ -7,7 +7,13 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "bundle.js",
+        filename: "[name].js",
+    },
+    devtool: "inline-source-map",
+    devServer: {
+        static:"./dist",
+        hot: true,
+        open:true
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -21,9 +27,6 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
-                    options: {
-
-                    }
                 }
             },
             {
@@ -31,6 +34,8 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             }
         ]
+    },
+    optimization: {
+        runtimeChunk: "single"
     }
-
 }
