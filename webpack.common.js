@@ -7,13 +7,8 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "[name].js",
-    },
-    devtool: "inline-source-map",
-    devServer: {
-        static:"./dist",
-        hot: true,
-        open:true
+        filename: "[name].bundle.js",
+        clean: true
     },
     plugins: [
         new HTMLWebpackPlugin({
